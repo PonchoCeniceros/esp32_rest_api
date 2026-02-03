@@ -61,3 +61,19 @@ Navegar a `WiFi Configuration` y configurar:
 ├── CMakeLists.txt       # Configuración de construcción
 └── README.md            # Este archivo
 ```
+
+## Guía de librerías/Framework ESP-IDF
+
+| Librería | ¿Qué es? | Su función crítica en tu proyecto |
+| :--- | :--- | :--- |
+| **nvs_flash.h** | El "Disco Duro" (No-Volátil) | Guarda datos que no se borran al apagar el chip. El WiFi la usa para recordar la configuración y llaves de cifrado. |
+| **freertos/FreeRTOS.h** | El Director de Orquesta | Es el núcleo del sistema operativo. Permite que el ESP32 haga varias cosas "a la vez" (Multitarea). |
+| **freertos/event_groups.h** | El Tablero de Anuncios | Permite que una parte del código (WiFi) le avise a otra (Main) que ya ocurrió algo importante. |
+| **esp_wifi.h** | El Driver de la Antena | Controla el hardware de radio. Se encarga de buscar redes, conectarse y gestionar la seguridad WPA2. |
+| **esp_event.h** | El Sistema de Notificaciones | Gestiona los eventos del sistema (ej: "cable desconectado", "IP obtenida", "error de clave"). |
+| **esp_netif.h** | La Tarjeta de Red (Software) | Es la interfaz entre el WiFi y el protocolo TCP/IP. Sin esto, el WiFi conecta pero no hay navegación. |
+| **mdns.h** | El Alias de Red | Permite que uses esp32.local en lugar de una IP numérica. Es como un mini-servidor de nombres local. |
+| **esp_http_server.h** | El Servidor Web | Escucha peticiones en el puerto 80 y decide qué función de tu código (Handler) debe responder. |
+| **esp_log.h** | La Consola de Depuración | Envía mensajes de texto por el puerto serie (USB) para que veas qué pasa dentro del chip desde tu PC. |
+
+---
