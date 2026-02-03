@@ -1,0 +1,24 @@
+# --- Archivos de Compilación ---
+build/
+sdkconfig
+sdkconfig.old
+
+# --- Archivos del Sistema / Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+
+# --- Componentes Gestionados (Se descargan automáticamente) ---
+managed_components/
+dependencies.lock
+
+# --- VS Code e IDEs ---
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# --- Logs y temporales ---
+*.log
+.cache/
