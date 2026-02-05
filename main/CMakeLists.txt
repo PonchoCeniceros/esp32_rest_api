@@ -14,4 +14,5 @@ idf_component_register(
       esp_netif        # Para la pila TCP/IP
       mdns             # Para el nombre .local
       esp_http_server  # Para la API REST
+      esp_driver_gpio  # para manejar los pines
 )

@@ -1,8 +1,15 @@
 #include "nvs_flash.h"
 #include "wifi_app.h"
 #include "api_rest.h"
+#include "driver/gpio.h"
+
+#define BLINK_GPIO 2
 
 void app_main(void) {
+    // Configurar el pin como salida
+    gpio_reset_pin(BLINK_GPIO);
+    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
+
     // Inicializar memoria no volátil
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
