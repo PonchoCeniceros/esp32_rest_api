@@ -4,8 +4,8 @@
 #include "esp_log.h"
 #include <string.h>
 
-#define WIFI_SSID "ssid"
-#define WIFI_PASS "****"
+#define WIFI_SSID "Servicios_07A0"
+#define WIFI_PASS "17824644"
 
 static const char *TAG = "WIFI_MOD";
 EventGroupHandle_t wifi_event_group;
